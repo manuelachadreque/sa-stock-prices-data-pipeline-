@@ -21,7 +21,7 @@ we will setup the airflow using astronomer cli, using the following comands:
 
 
 
-![Alt text]("architecture.svg")
+![Screenshot](./resources/architecture.svg)
 
 
 
