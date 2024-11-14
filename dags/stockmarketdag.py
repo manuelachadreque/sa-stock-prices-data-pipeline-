@@ -5,6 +5,8 @@ from airflow.operators.python import PythonOperator
 from airflow.providers.docker.operators.docker import DockerOperator
 from airflow.providers.amazon.aws.operators.glue import GlueJobOperator
 from airflow.providers.amazon.aws.operators.glue_crawler import GlueCrawlerOperator
+from myprovider.notifier import MyNotifier
+
 
 from astro import sql as aql
 from astro.files import File

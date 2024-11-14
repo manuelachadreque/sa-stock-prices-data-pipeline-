@@ -94,6 +94,9 @@ def transform_prices(stock_prices, **kwargs):
         close_list = json_stocks[symbol]['indicators']['quote'][0].get('close', [])
         volume_list = json_stocks[symbol]['indicators']['quote'][0].get('volume', [])
         high_list = json_stocks[symbol]['indicators']['quote'][0].get('high', [])
+        open_list = json_stocks[symbol]['indicators']['quote'][0].get('open', [])
+
+        
 
         # Create a DataFrame from the lists
         combined_df = pd.DataFrame({
@@ -102,7 +105,8 @@ def transform_prices(stock_prices, **kwargs):
             'low': low_list,
             'close': close_list,
             'volume': volume_list,
-            'high': high_list
+            'high': high_list,
+            'open':open_list
         })
 
         # Append each symbol's DataFrame to the list
