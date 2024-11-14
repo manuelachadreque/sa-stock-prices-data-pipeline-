@@ -11,15 +11,17 @@ Project Contents
 - Docker
 -AWS Account
 
-## Airflow Setup
+## Project Setup
 
 we will setup the airflow using astronomer cli, using the following comands:
 
-```python
+
+
+### Architecture
 
 
 
+![Alt text]("architecture.svg")
 
-```
 
 
