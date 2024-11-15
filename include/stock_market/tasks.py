@@ -89,24 +89,37 @@ def transform_prices(stock_prices, **kwargs):
     # Iterate through each stock symbol in the JSON data
     for symbol in json_stocks.columns:
         # Extract relevant data lists for each field
-        timestamp_list = json_stocks[symbol].get('timestamp', [])
-        low_list = json_stocks[symbol]['indicators']['quote'][0].get('low', [])
-        close_list = json_stocks[symbol]['indicators']['quote'][0].get('close', [])
-        volume_list = json_stocks[symbol]['indicators']['quote'][0].get('volume', [])
-        high_list = json_stocks[symbol]['indicators']['quote'][0].get('high', [])
-        open_list = json_stocks[symbol]['indicators']['quote'][0].get('open', [])
-
-        
+        timestamp_list = json_stocks[symbol]['timestamp']
+        currency_list = json_stocks[symbol]['meta']['currency']
+        longName_list = json_stocks[symbol]['meta']['longName']
+        fullExchangeName_list = json_stocks[symbol]['meta']['fullExchangeName']
+        instrumentType_list = json_stocks[symbol]['meta']['instrumentType']
+        open_list = json_stocks[symbol]['indicators']['quote'][0]['open']
+        low_list = json_stocks[symbol]['indicators']['quote'][0]['low']
+        close_list = json_stocks[symbol]['indicators']['quote'][0]['close']
+        volume_list = json_stocks[symbol]['indicators']['quote'][0]['volume']
+        high_list = json_stocks[symbol]['indicators']['quote'][0]['high']
+        adjclose_list = json_stocks[symbol]['indicators']['adjclose'][0]['adjclose']
+       
 
         # Create a DataFrame from the lists
         combined_df = pd.DataFrame({
             'symbol': symbol,
             'timestamp': timestamp_list,
+            'currency': currency_list,
+            'longName': longName_list,        
+            'fullExchangeName': fullExchangeName_list,
+            'instrument type': instrumentType_list,          
             'low': low_list,
+            'open': open_list,
             'close': close_list,
             'volume': volume_list,
             'high': high_list,
-            'open':open_list
+            'currency': currency_list,
+            'adjclose': adjclose_list
+
+
+
         })
 
         # Append each symbol's DataFrame to the list

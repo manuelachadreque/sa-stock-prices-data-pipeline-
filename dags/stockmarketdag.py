@@ -5,9 +5,7 @@ from airflow.operators.python import PythonOperator
 from airflow.providers.docker.operators.docker import DockerOperator
 from airflow.providers.amazon.aws.operators.glue import GlueJobOperator
 from airflow.providers.amazon.aws.operators.glue_crawler import GlueCrawlerOperator
-from myprovider.notifier import MyNotifier
-
-
+from airflow.models.baseoperator import chain
 from astro import sql as aql
 from astro.files import File
 from astro.sql.table import Table ,Metadata
@@ -17,7 +15,7 @@ from include.stock_market.tasks import _get_stock_prices, upload_to_s3_from_mini
 
 
 
-SYMBOLS =['SHP.JO','GFI.JO', 'VDMCY', 'ABG.JO', 'SBK.JO', 'SPP.JO']
+SYMBOLS =['SHP.JO','GFI.JO', 'ABG.JO', 'SBK.JO', 'SPP.JO']
 
 
 # Define the DAG
@@ -105,9 +103,16 @@ def stock_market():
         region_name='us-east-1',             
         poll_interval=5                   
     )
-
-    is_api_available() >> get_stock_prices >> store_prices>>transform_price>>store_transformed_price>>store_prices_in_s3>>glue_job_task>>glue_crawler_task
-
+    
+    chain(
+        is_api_available(), 
+          get_stock_prices , store_prices,
+          transform_price,
+          store_transformed_price,
+          store_prices_in_s3,
+          glue_job_task,
+          glue_crawler_task
+          )
 
 
     
