@@ -104,4 +104,5 @@ The project architecture is composed by different layers that come together to c
 
 
 # Dashboard
-<iframe width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiODRmZWIzZjktNTRmZS00MTQ3LThlMmUtMThjMmEyMTA4YzQwIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9&pageName=92745ff392d64e842279" frameborder="0" allowFullScreen="true"></iframe>
+
+[Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiODRmZWIzZjktNTRmZS00MTQ3LThlMmUtMThjMmEyMTA4YzQwIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9)
