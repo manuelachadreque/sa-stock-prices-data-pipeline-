@@ -26,12 +26,10 @@ Step 1. Install astronomer cli
 
 ```
  # install astro   
-
     curl -sSL install.astronomer.io | sudo bash -s
 
  # test the installation
     astro --version
-
 ```
 
 Step 2. create the project
@@ -41,9 +39,7 @@ Step 2. create the project
     mkdir my_projec
 
 # Create Astro project
-
     astro dev init
-
 ```
 
 *astro dev init* - will create the necessary folders for you project inside your project folder
@@ -52,8 +48,6 @@ Step 3. Start the apache airflow
 
 ```
     astro dev init
-
-
 ```
 
 **Other relevant astro comands:**
@@ -107,3 +101,7 @@ The project architecture is composed by different layers that come together to c
 * **Power BI**-
 
 
+
+
+# Dashboard
+<iframe width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiODRmZWIzZjktNTRmZS00MTQ3LThlMmUtMThjMmEyMTA4YzQwIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9&pageName=92745ff392d64e842279" frameborder="0" allowFullScreen="true"></iframe>
