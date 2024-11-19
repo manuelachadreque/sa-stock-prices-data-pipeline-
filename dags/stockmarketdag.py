@@ -106,7 +106,8 @@ def stock_market():
     
     chain(
         is_api_available(), 
-          get_stock_prices , store_prices,
+          get_stock_prices , 
+          store_prices,
           transform_price,
           store_transformed_price,
           store_prices_in_s3,
