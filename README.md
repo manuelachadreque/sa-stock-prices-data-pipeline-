@@ -1,4 +1,4 @@
-# Stock Market data pipeline part I
+# Stock Market data pipeline part 
 ==============================
 
 ## Overview
