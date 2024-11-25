@@ -6,7 +6,7 @@
 ### Project summary
 
 The present project was developed to implement a data pipeline to restrieve financial data from yahoo api and present insights on a power bi dashboard.
-we use services for storage, metadata, transformation and insight analysis. 
+we AWs use services for storage, metadata, transformation and insight analysis. 
 the current project presents an end to end solution where airflow poses as an orchestrator of the different components to ensure a seamless data extraction, transformation, and visualization. 
 To orchestrate and schedule the pipeline, we leveraged Apache Airflow, enabling efficient task automation and monitoring. AWS Glue was employed for scalable data transformation, ensuring the data was clean, structured, and ready for analysis. Additionally, Amazon Athena facilitated fast and cost-effective querying of the transformed data, providing insights that were ultimately visualized in an interactive and dynamic Power BI dashboard.
 
